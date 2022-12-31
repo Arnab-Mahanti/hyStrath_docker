@@ -10,4 +10,4 @@ RUN sudo apt install -y g++-7 gcc-7 && sudo update-alternatives --install /usr/b
 COPY --chown=foam:foam . /home/foam/
 WORKDIR /home/foam
 RUN cd ./OpenFOAM-v1706 && source ./etc/bashrc && ./Allwmake -j -s -q -k
-RUN echo "source ~/OpenFOAM-v1706/etc/bashrc" >> ~/.bashrc && echo "export FOAM_RUN=~/openfoam-data/run" >> ~/.bashrc && echo "export WM_PROJECT_USER_DIR=~/openfoam-data" >> ~/.bashrc && source ~/.bashrc && mkdir ~/openfoam-data && mkdir ~/openfoam-data/run && sudo chown -R foam:foam ~/openfoam-data
+RUN echo "source ~/OpenFOAM-v1706/etc/bashrc" >> ~/.bashrc && echo "export FOAM_RUN=~/openfoam-data/run" >> ~/.bashrc && echo "export FOAM_APPBIN=$WM_PROJECT_DIR/platforms/$WM_OPTIONS/bin" >> ~/.bashrc && echo "export FOAM_LIBBIN=$WM_PROJECT_DIR/platforms/$WM_OPTIONS/lib" >> ~/.bashrc && echo "export WM_PROJECT_USER_DIR=~/openfoam-data" >> ~/.bashrc && source ~/.bashrc && mkdir ~/openfoam-data && mkdir ~/openfoam-data/run && sudo chown -R foam:foam ~/openfoam-data
