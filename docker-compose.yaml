@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  openfoam:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mtg/of_v1706:focal
+    command: ["sleep","infinity"]
+    volumes:
+      - ./openfoam-data:/home/foam/openfoam-data:rw
