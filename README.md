@@ -62,5 +62,5 @@ To use this follow the following instructions:
 11. Install the required hyStrath modules. Replace NUMPROCS with the number of processors used during compilation.
 
     ```
-    cd $WM_PROJECT_USER_DIR && ./install.sh NUMPROCS 2>/dev/null
+    cd $WM_PROJECT_USER_DIR/hyStrath && ./install.sh NUMPROCS 2>/dev/null
     ```
