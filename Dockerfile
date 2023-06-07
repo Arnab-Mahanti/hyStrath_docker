@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y curl sudo build-essential && useradd --
 USER foam
 RUN sudo apt install -y g++-7 gcc-7 && sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 7 && sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 7 &&\
 	sudo update-alternatives --config gcc && sudo update-alternatives --config g++ &&\
-	sudo DEBIAN_FRONTEND=noninteractive apt install -y  build-essential autoconf autotools-dev cmake gawk flex libfl-dev libreadline-dev zlib1g-dev openmpi-bin libopenmpi-dev mpi-default-bin mpi-default-dev libgmp-dev libmpfr-dev libmpc-dev nano bc
+	sudo DEBIAN_FRONTEND=noninteractive apt install -y  build-essential gdb autoconf autotools-dev cmake gawk flex libfl-dev libreadline-dev zlib1g-dev openmpi-bin libopenmpi-dev mpi-default-bin mpi-default-dev libgmp-dev libmpfr-dev libmpc-dev nano bc
 COPY --chown=foam:foam . /home/foam/
 WORKDIR /home/foam
 RUN cd ./OpenFOAM-v1706 && source ./etc/bashrc && ./Allwmake -j -s -q -k
