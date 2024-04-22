@@ -40,6 +40,11 @@ To use this follow the following instructions:
     ```
     cd ./openfoam-data && git clone https://github.com/hystrath/hyStrath.git --branch master --single-branch && cd ..
     ```
+    Optionally, clone without commit history with `--depth=1`
+
+    ```
+    cd ./openfoam-data && git clone https://github.com/hystrath/hyStrath.git --branch master --single-branch --depth=1 && cd ..
+    ```
 
 8. Build and deploy the docker image. This can take a long time (apprx. 1 hr. depending on the system configuration).
 
